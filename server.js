@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const PORT = process.env.PORT || 3000;
 
 const Workout = require('./models/workout.js');
+const { db } = require('./models/workout.js');
 const app = express();
 
 app.use(logger("dev"));
@@ -20,8 +21,8 @@ mongoose.connect(
     // Tool used to parse connection string
     useNewUrlParser: true,
     useFindAndModify: false,
+    
  });
-
 
 
 
