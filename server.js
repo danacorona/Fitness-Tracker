@@ -15,10 +15,14 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { 
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/workout",
+   { 
     // Tool used to parse connection string
     useNewUrlParser: true,
-    useFindAndModify: false
+    useFindAndModify: false,
+    useCreateIndex: true,
+    useUnifiedTopology:true,
  });
 
 
