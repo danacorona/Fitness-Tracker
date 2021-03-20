@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const PORT = process.env.PORT || 3000;
 
-const Workout = require('./models/workout.js')
+const Workout = require('./models/workout.js');
 const app = express();
 
 app.use(logger("dev"));
@@ -16,13 +16,13 @@ app.use(express.json());
 app.use(express.static("public"));
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/workout",
+  process.env.MONGODB_URI || "mongodb://localhost/Workout",
    { 
     // Tool used to parse connection string
     useNewUrlParser: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
     useUnifiedTopology:true,
+    useCreateIndex: true,
+    useFindAndModify: false,
  });
 
 
